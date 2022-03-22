@@ -24,6 +24,7 @@ public class HeroController {
     @Autowired
     private IncidentRepository incidentRepository;
 
+    // Liste et recherche de heros
     @RequestMapping("/hero/heros")
     public String index(
             Model model,
@@ -41,12 +42,14 @@ public class HeroController {
         return "hero/heros";
     }
 
+    // Suppression d'un hero
     @RequestMapping(value = "/hero/delete" , method = RequestMethod.GET)
     public String delete(Long id, String nom, int page, int size) {
         heroRepository.deleteById(id);
         return "redirect:/hero/heros?page="+page+"&size="+size+"&nom="+nom;
     }
 
+    // Formulaire d'ajout
     @RequestMapping(value = "/hero/form", method = RequestMethod.GET)
     public String form(Model model){
         model.addAttribute("hero", new Hero());
@@ -55,6 +58,7 @@ public class HeroController {
         return "hero/form";
     }
 
+    // Validation du formulaire
     @RequestMapping(value = "/hero/save", method = RequestMethod.POST)
     public String save(Model model, @Valid Hero hero, BindingResult bindingResult){
         if(bindingResult.hasErrors())

@@ -3,6 +3,7 @@ package com.example.justhero.Models;
 import antlr.collections.List;
 import org.hibernate.annotations.BatchSize;
 import org.hibernate.annotations.NotFound;
+import org.hibernate.validator.constraints.Length;
 import org.springframework.lang.NonNull;
 import javax.persistence.*;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -28,6 +29,7 @@ public class Hero  {
     private String tel;
 
     @NotEmpty(message = "Veuillez Renseigner au moins un type d'incident")
+    @Size(min = 1, max = 3)
     @ManyToMany()
     private java.util.List<Incident> incidents;
 
