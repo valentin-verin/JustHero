@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" th:href="@{../css/bootstrap.min.css}">
+    <title>JustHero</title>
+</head>
+<body>
+<div class="container mt-3">
+
+    <div class="jumbotron text-center mt-3">
+        <h1 class="display-3">Hero Ajouté !</h1>
+        <p class="lead">Le hero à bien été ajouté</p>
+        <hr>
+        <div class="form-group">
+            <ul class="nav-pills">
+                <li class="nav-item">
+                    <label>id:</label>
+                    <label th:text="${hero.id}"></label>
+                </li>
+                <li class="nav-item">
+                    <label>nom:</label>
+                    <label th:text="${hero.nom}"></label>
+                </li>
+                <li class="nav-item">
+                    <label>latitude:</label>
+                    <label th:text="${hero.latitude}"></label>
+                </li>
+                <li class="nav-item">
+                    <label>longitude:</label>
+                    <label th:text="${hero.longitude}"></label>
+                </li>
+                <li class="nav-item">
+                    <label>tel:</label>
+                    <label th:text="${hero.tel}"></label>
+                </li>
+                <li class="nav-item">
+                    <label>Incidents:</label>
+                    <label th:each="h:${hero.incidents}" th:text="${h.nom}"></label>
+                </li>
+            </ul>
+
+        </div>
+        <p class="lead">
+            <a class="btn btn-primary btn-sm" href="https://bootstrapcreative.com/" role="button">Continue to homepage</a>
+        </p>
+    </div>
+
+</div>
+</body>
+</html>

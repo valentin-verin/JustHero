@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    lang="fr"
+>
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" th:href="@{../css/bootstrap.min.css}">
+    <title>JustHero</title>
+</head>
+<body>
+    <header>
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a th:href="@{/hero/form}">Enregistrer un hero</a></li>
+                <li><a th:href="@{/hero/heros}">Voir les hero</a></li>
+                <li><a th:href="@{/hero/form}">Enregistrer un incident</a></li>
+            </ul>
+        </div>
+    </header>
+    <section layout:fragment="content">
+
+    </section>
+
+    <footer>
+        <hr/>
+        <div class="container">
+            <small>
+                Copiright @2022
+            </small>
+        </div>
+    </footer>
+
+</body>
+</html>
