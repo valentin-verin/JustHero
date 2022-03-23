@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+
+</head>
+
+<style>
+    #map { height: 750px; }
+</style>
+
+<body>
+    <ul>
+        <li class="nav-item">
+            <label>latitude:</label>
+            <label th:text="${incident.latitude}"></label>
+        </li>
+        <li class="nav-item">
+            <label>longitude:</label>
+            <label th:text="${incident.longitude}"></label>
+        </li>
+    </ul>
+    <div id="map"></div>
+</body>
+
+<script>
+
+    window.onload = function()
+    {
+        carte = L.map('map').setView([50.62780642114285, 3.0705958641496514], 8); L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',
+        {
+        attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
+        minZoom: 1,
+        maxZoom: 20
+        }).addTo(carte);
+
+        var marker = L.marker([50.62780642114285, 3.0705958641496514]).addTo(carte);
+
+        var circle = L.circle([50.62780642114285, 3.0705958641496514], {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: 50000
+        }).addTo(carte);
+    };
+
+</script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+</html>

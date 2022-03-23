@@ -1,6 +1,8 @@
 package com.example.justhero.Models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -14,6 +16,8 @@ public class Incident {
     private String longitude;
 
     @ManyToMany()
+    //@NotEmpty(message = "Veuillez Renseigner un incident")
+    //@Size(min = 1, max = 1)
     private java.util.List<Hero> heros;
 
     public Incident() {

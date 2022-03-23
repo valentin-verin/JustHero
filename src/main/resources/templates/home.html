@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" th:href="@{../css/bootstrap.min.css}">
+    <title>JustHero</title>
+</head>
+<header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" th:href="@{/}">JustHero</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{hero/heros}">Les heros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{hero/form}">Ajout de hero</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{incident/form}">Déclarer un incident</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+</header>
+<body>
+<div class="container mt-5">
+
+    <div class="jumbotron text-center mt-5">
+        <h1 class="display-3">JustHero</h1>
+        <p class="lead">Trouvez le hero qui correspond à votre incident</p>
+        <hr>
+        <p class="lead">
+            <a class="btn btn-primary btn-sm" th:href="@{/hero/heros}" role="button">Rechercher un super hero</a>
+            <a class="btn btn-primary btn-sm" th:href="@{/hero/form}" role="button">Ajout de hero</a>
+        </p>
+        <p>
+            <a class="btn btn-primary btn-sm" th:href="@{/incident/form}" role="button">Déclarer un incident</a>
+        </p>
+    </div>
+
+</div>
+</body>
+</html>

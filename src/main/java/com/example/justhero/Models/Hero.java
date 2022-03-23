@@ -21,9 +21,9 @@ public class Hero  {
     private Long id;
     @Size(min = 2, max = 20, message = "Veuillez renseigner un nom correct" )
     private String nom;
-    @Size(min = 1, max = 5, message = "Veuillez renseigner une latitude au bon format")
+    @Size(min = 1, max = 30, message = "Veuillez renseigner une latitude au bon format")
     private String latitude;
-    @Size(min = 1, max = 5, message = "Veuillez renseigner une longitude au bon format")
+    @Size(min = 1, max = 30, message = "Veuillez renseigner une longitude au bon format")
     private String longitude;
     @Size(min = 10, max = 10, message = "Veuillez renseigner un numéro de téléphone au bon format" )
     private String tel;
