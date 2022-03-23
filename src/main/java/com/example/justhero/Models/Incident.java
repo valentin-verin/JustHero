@@ -12,7 +12,9 @@ public class Incident {
     @GeneratedValue
     private Long id;
     private String nom;
+    @Size(min = 1, max = 30, message = "Veuillez renseigner une latitude au bon format")
     private String latitude;
+    @Size(min = 1, max = 30, message = "Veuillez renseigner une longitude au bon format")
     private String longitude;
 
     @ManyToMany()

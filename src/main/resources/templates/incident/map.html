@@ -3,17 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin=""/>
+    <link rel="stylesheet" type="text/css" th:href="@{../css/bootstrap.min.css}">
+    <title>JustHero</title>
 
 </head>
-
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" th:href="@{/}">JustHero</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{heros}">Les heros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{form}">Ajout de hero</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/incident/form}">Déclarer un incident</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
 <style>
-    #map { height: 750px; }
+    #map { height: 580px; }
 </style>
 
-<body>
+<body class="container">
+    <h1 class="display-4">Super-Héros dans votre périmètre</h1>
     <ul>
         <li class="nav-item">
             <label>latitude:</label>

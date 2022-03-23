@@ -19,6 +19,9 @@
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/hero/form}">Ajout de hero</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/incident/form}">Déclarer un incident</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -27,6 +30,7 @@
 
 <body>
 <div class="container mt-3">
+    <h1 class="display-4">Déclarer un incident</h1>
     <form th:action="@{save}" method="post">
         <div class="form-group">
             <label>Latitude</label>
